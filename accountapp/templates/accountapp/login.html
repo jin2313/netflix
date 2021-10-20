@@ -1,0 +1,54 @@
+{% extends 'accountapp/base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+<style>
+    body {
+        background-image : linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/static/img/background.jpg');
+        height: 100vh;
+        color: #8c8c8c;
+    }
+    footer {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    .account-box {
+        background-color: rgba(0, 0, 0, 0.8);
+        margin-bottom: 100px;
+    }
+    .account-form {
+        background-color: #333333;
+        border: 0px solid black;
+        color: white;
+    }
+    .account-form::placeholder {
+        color: #8c8c8c;
+    }
+    .account-form:focus {
+        background-color: #333333;
+        color: white;
+    }
+</style>
+
+<div class="account-box p-5 mt-5">
+    <h2 class="mb-4" style="color: white;" class="mb-4"><strong>로그인</strong></h2>
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        <div style="width: 90%; margin: 0px auto;">
+            {% bootstrap_form form %}
+<!--            <input type="text" class="account-form form-control-lg w-100 mb-3" name="id" placeholder="이메일 주소 또는 전화번호">-->
+<!--            <input type="password" class="account-form form-control-lg w-100 mb-3" name="password" placeholder="비밀번호">-->
+            <button class="btn-lg rounded-4 w-100 mt-3 mb-5" type="submit" style="background-color: #e50914; color:white; border: 0px solid black;"><strong>로그인</strong></button>
+        </div>
+    </form>
+    <div class="mb-5" style="width: 90%; margin: 0px auto;">
+        <span style="font-size: 1rem">
+            Netflix 회원이 아닌가요? <a href="{% url 'signup' %}" style="text-decoration: none; color: white;"><strong>지금 가입하세요.</strong></a>
+        </span>
+    </div>
+    <div class="mb-5" style="width: 90%; margin: 0px auto;">
+        <span style="font-size: 0.8rem;">
+            이 페이지는 Google reCAPTCHA의 보호를 받아 사용자가 로봇이 아님을 확인합니다.
+        </span>
+    </div>
+</div>
+{% endblock %}

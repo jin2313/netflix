@@ -1,0 +1,45 @@
+{% extends 'accountapp/base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+<style>
+    body {
+        color: #757575;
+    }
+    footer {
+        background-color: #f3f3f3;
+    }
+    .account-box {
+        background-color: #f3f3f3;
+        border: 1px solid #dcdcdc;
+        margin-bottom: 150px;
+    }
+    .account-form {
+        border: 1px solid #dcdcdc;
+        color: #505050;
+    }
+    .account-form::placeholder {
+        color: #757575;
+    }
+    .account-form:focus {
+        color: #505050;
+    }
+</style>
+
+<hr style="color: #aaaaaa">
+<div class="account-box p-5 mt-5">
+    <h2 class="mb-4" style="color: #505050;"><strong>회원가입</strong></h2>
+    <form action="{% url 'signup' %}" method="post">
+        {% csrf_token %}
+        <div style="width: 90%; margin: 0px auto;">
+            {% bootstrap_form form %}
+            <button class="btn-lg rounded-4 w-100 mt-3 mb-5" type="submit" style="background-color: #e50914; color:white; border: 0px solid black;"><strong>회원가입</strong></button>
+        </div>
+    </form>
+    <div class="mb-5" style="width: 90%; margin: 0px auto;">
+        <span style="font-size: 0.8rem;">
+            이 페이지는 Google reCAPTCHA의 보호를 받아 사용자가 로봇이 아님을 확인합니다.
+        </span>
+    </div>
+</div>
+{% endblock %}l>
