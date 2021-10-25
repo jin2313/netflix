@@ -1,0 +1,15 @@
+    .logo {
+        width: 70%;
+        margin: 18px 50px;
+    }
+    footer {
+        width: 100%;
+    }
+    .account-box {
+        width: 440px;
+        margin: 0px auto;
+        border-radius: 0.3rem;
+    }
+    .account-form::placeholder {
+        font-size: 1rem;
+    }

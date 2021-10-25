@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ko">
+
+{% include 'head.html' %}
+
+<body>
+<div class="logo">
+    <a href="{% url 'main' %}"><img src="/static/img/logo.png" style="width: 180px;"></a>
+</div>
+{% block content %}
+{% endblock %}
+
+{% include 'footer.html' %}
+</body>
+
+</html>

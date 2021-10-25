@@ -1,10 +1,10 @@
-{% extends 'accountapp/base.html' %}
+{% extends 'base.html' %}
 {% load bootstrap4 %}
 
 {% block content %}
 <style>
     body {
-        background-image : linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/static/img/background.jpg');
+        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/static/img/background.jpg');
         height: 100vh;
         color: #8c8c8c;
     }
@@ -35,8 +35,6 @@
         {% csrf_token %}
         <div style="width: 90%; margin: 0px auto;">
             {% bootstrap_form form %}
-<!--            <input type="text" class="account-form form-control-lg w-100 mb-3" name="id" placeholder="이메일 주소 또는 전화번호">-->
-<!--            <input type="password" class="account-form form-control-lg w-100 mb-3" name="password" placeholder="비밀번호">-->
             <button class="btn-lg rounded-4 w-100 mt-3 mb-5" type="submit" style="background-color: #e50914; color:white; border: 0px solid black;"><strong>로그인</strong></button>
         </div>
     </form>
